@@ -18,12 +18,27 @@ Endpoints
   - URL: /search-logs
   - Method: POST
   - Content-Type: application/json
-  - Body:
+  - Request Body:
     `{
       "searchKeyword": "keyword",
       "from": "2023-01-01 00:00:00",
       "to": "2023-01-01 23:59:59"
     }`
+  - Response body:
+    `{
+     "result": [
+       "2023-01-01 00:05:10 - Log entry 1",
+       "2023-01-01 00:15:25 - Log entry 2",
+       "2023-01-01 00:30:45 - Log entry 3"
+     ],
+     "metadata": {
+      "responseCode": 200,
+      "responseStatus": "OK",
+      "errorCode": None,
+      "errorMessage": None,
+      "resultSize": 3,
+     }
+   }`
 
 # Start the Flask application
 python run.py
